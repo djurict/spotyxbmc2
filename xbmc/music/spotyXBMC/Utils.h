@@ -49,7 +49,6 @@ namespace addon_music_spotify {
     static void updateAllArtists();
     static void updateAllAlbums();
     static void updateAllTracks();
-    static void updateRadio(int radio);
     static void updateToplistMenu();
     static void updateSearchResults(string query);
 

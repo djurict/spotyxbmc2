@@ -197,13 +197,6 @@ namespace addon_music_spotify {
      updatePath(path);
    }
 
-   void Utils::updateRadio(int radio) {
-     Logger::printOut("updating radio results");
-     CStdString path;
-     path.Format("musicdb://3/spotify:radio:%i/", radio);
-     updatePath(path);
-   }
-
    void Utils::updateToplistMenu() {
      Logger::printOut("updating toplistmenu");
      CStdString path;

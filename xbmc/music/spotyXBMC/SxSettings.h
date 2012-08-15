@@ -117,42 +117,7 @@ namespace addon_music_spotify {
     	return m_artistNumberTracks;
     }
 
-    CStdString getRadio1Name() {
-      return m_radio1Name;
-    }
-
-    int getRadio1From() {
-      return m_radio1From;
-    }
-
-    int getRadio1To() {
-      return m_radio1To;
-    }
-
-    sp_radio_genre getRadio1Genres() {
-    	return m_radio1Genres;
-    }
-
-    CStdString getRadio2Name() {
-      return m_radio2Name;
-    }
-
-    int getRadio2From() {
-      return m_radio2From;
-    }
-
-    int getRadio2To() {
-      return m_radio2To;
-    }
-
-    sp_radio_genre getRadio2Genres() {
-    	return m_radio2Genres;
-    }
-
-    int getRadioNumberTracks() {
-      return m_radioNumberTracks;
-    }
-
+  
     bool toplistRegionEverywhere() {
       return m_toplistRegionEverywhere;
     }
@@ -177,10 +142,7 @@ namespace addon_music_spotify {
       return m_topListTrackString;
     }
 
-    CStdString getRadioPrefixString() {
-      return m_radioPrefixString;
-    }
-
+   
     CStdString getSimilarArtistsString() {
       return m_similarArtistsString;
     }
@@ -228,17 +190,12 @@ namespace addon_music_spotify {
     int m_searchNumberArtists;
     int m_searchNumberAlbums;
     int m_searchNumberTracks;
-    int m_radio1From;
-    int m_radio1To;
-    int m_radio2From;
-    int m_radio2To;
-    int m_radioNumberTracks;
+  
     int m_artistNumberArtists;
     int m_artistNumberAlbums;
     int m_artistNumberTracks;
 
-    sp_radio_genre m_radio1Genres;
-    sp_radio_genre m_radio2Genres;
+
 
     CStdString m_userName;
     CStdString m_password;
@@ -247,12 +204,10 @@ namespace addon_music_spotify {
     CStdString m_artistThumbPath;
     CStdString m_byString;
     CStdString m_fanart;
-    CStdString m_radio1Name;
-    CStdString m_radio2Name;
+
     CStdString m_topListArtistString;
     CStdString m_topListAlbumString;
     CStdString m_topListTrackString;
-    CStdString m_radioPrefixString;
     CStdString m_similarArtistsString;
     CStdString m_inboxString;
     CStdString m_starTrackString;
@@ -262,7 +217,6 @@ namespace addon_music_spotify {
     CStdString m_browseAlbumString;
     CStdString m_browseArtistString;
 
-    sp_radio_genre getRadioGenres(ADDON::AddonPtr addon, int radio);
 
     Settings();
     virtual ~Settings();

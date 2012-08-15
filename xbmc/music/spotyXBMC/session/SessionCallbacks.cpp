@@ -29,20 +29,25 @@ namespace addon_music_spotify {
   SessionCallbacks::SessionCallbacks() {
     m_callbacks.connection_error = &cb_connectionError;
     m_callbacks.logged_out = &cb_loggedOut;
-    m_callbacks.message_to_user = 0;
+    m_callbacks.message_to_user = NULL;
     m_callbacks.logged_in = &cb_loggedIn;
     m_callbacks.notify_main_thread = &cb_notifyMainThread;
     m_callbacks.music_delivery = &PlayerHandler::cb_musicDelivery;
-    m_callbacks.metadata_updated = 0;
-    m_callbacks.play_token_lost = 0;
+    m_callbacks.metadata_updated = NULL;
+    m_callbacks.play_token_lost = NULL;
     m_callbacks.log_message = &cb_logMessage;
     m_callbacks.end_of_track = &PlayerHandler::cb_endOfTrack;
-    m_callbacks.streaming_error = 0;
-    m_callbacks.userinfo_updated = 0;
-    m_callbacks.start_playback = 0;
-    m_callbacks.stop_playback = 0;
-    m_callbacks.get_audio_buffer_stats = 0;
-    //m_callbacks.offline_status_updated = 0;
+    m_callbacks.streaming_error = NULL;
+    m_callbacks.userinfo_updated = NULL;
+    m_callbacks.start_playback = NULL;
+    m_callbacks.stop_playback = NULL;
+    m_callbacks.get_audio_buffer_stats = NULL;
+    m_callbacks.offline_status_updated = NULL;
+        m_callbacks.offline_error = NULL;
+        m_callbacks.credentials_blob_updated = NULL;
+        m_callbacks.connectionstate_updated = NULL;
+        m_callbacks.scrobble_error  = NULL;
+        m_callbacks.private_session_mode_changed = NULL;
   }
 
   SessionCallbacks::~SessionCallbacks() {

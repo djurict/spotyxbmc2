@@ -70,7 +70,6 @@ private:
   bool getAllTracks(CFileItemList& items, CStdString& path);
   bool getPlaylistTracks(CFileItemList& items, int index);
   bool getTopListTracks(CFileItemList& items);
-  bool getRadioTracks(CFileItemList& items, int radio);
 
   bool getAllAlbums(CFileItemList& items, CStdString& path);
   bool getArtistAlbums(CFileItemList& items, CStdString& path);

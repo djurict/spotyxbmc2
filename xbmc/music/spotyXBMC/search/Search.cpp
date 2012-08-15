@@ -46,8 +46,21 @@ namespace addon_music_spotify {
     m_cancelSearch = false;
     Logger::printOut("creating search");
     Logger::printOut(query);
-    m_currentSearch = sp_search_create(Session::getInstance()->getSpSession(), m_query.c_str(), 0, m_maxTrackResults, 0, m_maxAlbumResults, 0, m_maxArtistResults, &cb_searchComplete, this);
 
+    m_currentSearch = sp_search_create(
+      Session::getInstance()->getSpSession(), // (sp_session *session,
+      m_query.c_str(), // quey
+      0,  // track offset
+      m_maxTrackResults, // track count
+      0,  // album_offset
+      m_maxAlbumResults, // album_count
+      0,  // artist_offset
+      m_maxArtistResults, // artist_count
+      0, // playlist_offset
+      m_maxArtistResults, // playlist_count
+      SP_SEARCH_STANDARD,  // search type
+      &cb_searchComplete, // callback
+      this);
   }
 
   Search::~Search() {

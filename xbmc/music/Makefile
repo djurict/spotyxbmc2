@@ -9,9 +9,6 @@ SRCS=Album.cpp \
      spotyXBMC/Logger.cpp \
      spotyXBMC/Utils.cpp \
      spotyXBMC/SxSettings.cpp \
-     spotyXBMC/radio/SxRadio.cpp \
-     spotyXBMC/radio/RadioHandler.cpp \
-     spotyXBMC/radio/RadioBackgroundLoader.cpp \
      spotyXBMC/album/SxAlbum.cpp \
      spotyXBMC/album/AlbumStore.cpp \
      spotyXBMC/album/AlbumContainer.cpp \

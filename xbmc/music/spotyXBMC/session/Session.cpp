@@ -28,7 +28,6 @@
 #include "../track/TrackStore.h"
 #include "../album/AlbumStore.h"
 #include "../thumb/ThumbStore.h"
-#include "../radio/RadioHandler.h"
 #include "../search/SearchHandler.h"
 #include "../Utils.h"
 
@@ -90,7 +89,8 @@ namespace addon_music_spotify {
       config.application_key_size = g_appkey_size;
       config.user_agent = "spotyXBMC2";
       config.device_id = "XBMC htpc";
-
+	  config.proxy = NULL;
+      
       sp_session_callbacks cb = m_sessionCallbacks.getCallbacks();
       config.callbacks = &cb;
       config.compress_playlists = true;
@@ -113,7 +113,8 @@ namespace addon_music_spotify {
       sp_session_set_connection_rules(m_session, SP_CONNECTION_RULE_NETWORK);
       sp_session_set_volume_normalization(m_session, Settings::getInstance()->useNormalization());
 
-      sp_session_login(m_session, Settings::getInstance()->getUserName().c_str(), Settings::getInstance()->getPassword().c_str(), true);
+      sp_session_login(m_session, Settings::getInstance()->getUserName().c_str(), Settings::getInstance()->getPassword().c_str(), 0, NULL);
+
       m_isEnabled = true;
       Logger::printOut("Logged in, returning");
       return true;
@@ -144,8 +145,6 @@ namespace addon_music_spotify {
       //SearchHandler::deInit();
       Logger::printOut("cleaned search");
 
-      //RadioHandler::deInit();
-      Logger::printOut("cleaned radios");
 
       //ArtistStore::deInit();
       Logger::printOut("cleaned artists");
